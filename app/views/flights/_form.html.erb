@@ -1,0 +1,10 @@
+<div class="form">
+
+ <%= form_with url: "/flights", method: :get do |form| %>
+  <%= form.label :flights, "Search for:" %>
+  <%= form.text_field :flights %>
+  <%= form.submit "Search" %>
+ <% end %>
+
+
+</div>

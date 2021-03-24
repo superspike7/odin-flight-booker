@@ -1,0 +1,11 @@
+<h1>Search flight:</h1>
+  <%= render 'form' %>
+<br>
+<h1>Flights</h1>
+<ul>
+<% @flights.each do |flight| %>
+  <li>flight no. <%= flight.id %></li>
+  <li>flight departure: <%= flight.from_airport.airport_code %></li>
+  <li>flight destination: <%= flight.to_airport.airport_code %></li>
+<% end %>
+</ul>
