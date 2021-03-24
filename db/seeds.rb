@@ -68,3 +68,10 @@ flight_codes.each do |code|
 	Airport.create(airport_code: code)
 
 end
+
+Flight.create(from_airport_id: Airport.find(1).id, to_airport_id: Airport.find(2).id, schedule: DateTime.new(2021,8,19) , flight_duration: 1000 )
+Flight.create(from_airport_id: Airport.find(2).id, to_airport_id: Airport.find(3).id, schedule: DateTime.new(2021,8,12) , flight_duration: 1000 )
+Flight.create(from_airport_id: Airport.find(3).id, to_airport_id: Airport.find(1).id, schedule: DateTime.new(2021,10,19) , flight_duration: 1000 )
+Flight.create(from_airport_id: Airport.find(1).id, to_airport_id: Airport.find(3).id, schedule: DateTime.new(2021,8,19) , flight_duration: 1000 )
+Flight.create(from_airport_id: Airport.find(2).id, to_airport_id: Airport.find(1).id, schedule: DateTime.new(2021,9,19) , flight_duration: 1000 )
+Flight.create(from_airport_id: Airport.find(3).id, to_airport_id: Airport.find(2).id, schedule: DateTime.new(2021,8,20) , flight_duration: 1000 )
