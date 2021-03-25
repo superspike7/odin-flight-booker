@@ -4,4 +4,7 @@ class FlightsController < ApplicationController
     @Airports = Airport.all
   end
 
+  def new
+    @flight = Flight.new
+  end
 end

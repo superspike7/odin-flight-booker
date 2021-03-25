@@ -1,10 +1,22 @@
 <div class="form">
 
  <%= form_with url: "/flights", method: :get do |form| %>
-  <%= form.label :flights, "Search for:" %>
-  <%= form.text_field :flights %>
+  From:<%= form.select( :from_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
+  To:<%= form.select( :to_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
+  No. of Passengers:<%= form.select( :booking, (1..4).to_a , { include_blank: true }) %>
+  Date:<%= form.date_select( :schedule , { :order => [:day, :month, :year] }, {} ) %>
   <%= form.submit "Search" %>
  <% end %>
 
 
 </div>
+
+<br>
+<!--
+<div class="form">
+  From:<%= select(:flight, :from_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
+  To:<%= select(:flight, :to_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
+  No. of Passengers:<%= select(:flight, :booking, (1..4).to_a , { include_blank: true }) %>
+  Date:<%= date_select(:flight, :schedule , order: [:day, :month, :year]) %>
+</div>
+-->
