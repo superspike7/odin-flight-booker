@@ -3,10 +3,11 @@
 <br>
 <h1>Flights (<%= @results.count %>)</h1>
 <div class="field">
-<%= form_with do |f| %>
+<%= form_with url: '/bookings/new', method: :get do |f| %>
   <% @results.each do |r| %>
      Flight no.<%= r.id %>
-     <%= radio_button(:book, :flight, r.id ) %>
+     <%= f.radio_button(:flight, r.id ) %>
+     <%= f.hidden_field :tickets, value: params[:passengers] %>
      <br>
   <% end %>
   <br>
