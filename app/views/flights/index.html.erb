@@ -1,4 +1,9 @@
 <h1>Search flight:</h1>
   <%= render 'form' %>
 <br>
-<h1>Flights</h1>
+<h1>Flights (<%= @results.count %>)</h1>
+<ol>
+  <% @results.each do |r| %>
+      <li>Flight no.<%= r.id %></li>
+  <% end %>
+</ol>
