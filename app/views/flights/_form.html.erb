@@ -3,8 +3,8 @@
  <%= form_with url: "/flights", method: :get do |form| %>
   From:<%= form.select( :from_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
   To:<%= form.select( :to_airport, Airport.all.map { |a| a.airport_code }, { include_blank: true }) %>
-  No. of Passengers:<%= form.select( :booking, (1..4).to_a , { include_blank: true }) %>
-  Date:<%= form.date_select( :schedule , { :order => [:day, :month, :year] }, {} ) %>
+  No. of tickets:<%= form.select( :ticket, (1..4).to_a ) %>
+  Date:<%= form.select(:date, Flight.all.map { |a| a.schedule}.uniq ) %>
   <%= form.submit "Search" %>
  <% end %>
 
