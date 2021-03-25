@@ -2,8 +2,14 @@
   <%= render 'form' %>
 <br>
 <h1>Flights (<%= @results.count %>)</h1>
-<ol>
+<div class="field">
+<%= form_with do |f| %>
   <% @results.each do |r| %>
-      <li>Flight no.<%= r.id %></li>
+     Flight no.<%= r.id %>
+     <%= radio_button(:book, :flight, r.id ) %>
+     <br>
   <% end %>
-</ol>
+  <br>
+  <%= f.submit "book now" %>
+<% end %>
+</div>
