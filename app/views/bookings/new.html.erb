@@ -1,4 +1,5 @@
 <h1>Book your Flight now! </h1>
+<%= @query %>
 <div class="field">
   <%= form_for @booking do |f|%>
     <%= f.hidden_field(:flight_id, value: params[:flight_id]) %>

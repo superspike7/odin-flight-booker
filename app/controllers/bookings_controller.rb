@@ -9,9 +9,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.passengers.build(params[:booking][:passengers])
     if @booking.save
+      flash[:success] = "booking is complete!"
       redirect_to @booking
     else
-      render 'new'
+      flash[:notice] = "Incorrect inputs"
+      redirect_to :new 
     end
   end
 
