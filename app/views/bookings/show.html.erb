@@ -1,0 +1,9 @@
+<h1> Your Ticket</h1>
+<ul>
+
+ <p>booking no. : </p><li> <%= @booking.id %> </li> 
+ <p>booking flight : </p><li> <%= @booking.flight_id %> </li> 
+ <p>passenger name : </p><li> <%= @booking.passengers.first.name %> </li> 
+ <p>passenger email: </p><li> <%= @booking.passengers.first.email %> </li> 
+
+</ul>

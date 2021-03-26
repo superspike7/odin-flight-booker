@@ -6,7 +6,7 @@
 <%= form_with url: '/bookings/new', method: :get do |f| %>
   <% @results.each do |r| %>
      Flight no.<%= r.id %>
-     <%= f.radio_button(:flight, r.id ) %>
+     <%= f.radio_button(:flight_id, r.id ) %>
      <%= f.hidden_field :tickets, value: params[:passengers] %>
      <br>
   <% end %>

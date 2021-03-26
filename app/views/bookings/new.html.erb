@@ -1,1 +1,14 @@
-booking form!
+<h1>Book your Flight now! </h1>
+<div class="field">
+  <%= form_for @booking do |f|%>
+    <%= f.hidden_field(:flight_id, value: params[:flight_id]) %>
+    <%= f.fields_for :passengers do |fp| %>
+      <%= fp.label :name %>
+      <%= fp.text_field :name %>
+      <%= fp.label :email %>
+      <%= fp.text_field :email %>
+    <% end %>
+     <%= f.submit "book now" %>
+  <% end %>
+</div>
+
