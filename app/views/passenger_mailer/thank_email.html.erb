@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> Thank you for Booking with Odin Flights <%= @passenger.name %></h1>
+    <p>
+      You have successfully booked your flight,
+      your flight_no is: <%= @flight.id %>.<br>
+      your destination is: <%= @flight.to_airport.airport_code %>.<br>
+    </p>
+    <p>
+    </p>
+    <p>Thanks for Booking and have a great day!</p>
+  </body>
+</html>

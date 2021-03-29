@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.passengers.build(params[:booking][:passengers])
     if @booking.save
       flash[:success] = "booking is complete!"
+      PassengerMailer.with(passenger: @booking.passengers.first).thank_email.deliver_later
       redirect_to @booking
     else
       flash[:notice] = "Incorrect inputs"
